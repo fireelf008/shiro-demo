@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <shiro:hasPermission name="add">
+        <button type="button">添加</button>
+    </shiro:hasPermission>
+    <shiro:hasPermission name="edit">
+        <button type="button">修改</button>
+    </shiro:hasPermission>
+    <shiro:hasPermission name="del">
+        <button type="button">删除</button>
+    </shiro:hasPermission>
+    <shiro:hasPermission name="list">
+        <button type="button">列表</button>
+    </shiro:hasPermission>
+    <p th:text="${#request.getAttribute('username')}"></p>
+    <p th:text="${session.user}"></p>
+</body>
+</html>
