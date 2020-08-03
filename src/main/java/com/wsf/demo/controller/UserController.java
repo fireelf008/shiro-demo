@@ -53,6 +53,7 @@ public class UserController {
      * @return
      */
     @PostMapping(value = "/add")
+    @RequiresPermissions("add")
     public String add(String username, String pwd) {
         User user = new User();
         user.setUsername(username);
@@ -66,6 +67,7 @@ public class UserController {
      * @return
      */
     @PostMapping(value = "/edit")
+    @RequiresPermissions("edit")
     public String edit() {
         return "edit page!";
     }
@@ -77,6 +79,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/del")
+    @RequiresPermissions("del")
     public String del() {
         return "delete page!";
     }

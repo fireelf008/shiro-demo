@@ -77,6 +77,7 @@ public class ShiroConfig {
         filterMap.put("/swagger**/**", "anon");
         filterMap.put("/webjars/**", "anon");
         filterMap.put("/v2/**", "anon");
+        filterMap.put("/api/**", "anon");
 
         //对所有用户认证
         filterMap.put("/**", "authc");
